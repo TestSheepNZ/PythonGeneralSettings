@@ -1,195 +1,193 @@
 import numpy as np
-# For X - first dimension is years experience
-#       - second dimension is 0 for female, 1 for male
-X = np.array([[1, 0], [5, 0], [10, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 0], [9, 0], [10, 0], [1, 0], [1, 0], [10, 0], [9, 0], [7, 0], [8, 0], [6, 0], [5, 0], [4, 0], [3, 0], [2, 0], [2, 0], [6, 0], [6, 0], [7, 0], [10, 0], [9, 0], [1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [5, 1], [5, 1], [2, 1], [3, 1], [4, 1], [4, 1], [3, 1], [6, 1], [6, 1], [6, 1], [7, 1], [7, 1], [7, 1], [8, 1], [8, 1], [8, 1], [9, 1], [10, 1], [10, 1], [9, 1], [9, 1], [9, 1], [10, 1]])
-Y = np.array([65, 80, 95, 67, 76, 80, 84, 87, 90, 93, 94, 101, 60, 70, 110, 98, 88, 86, 100, 75, 74, 72, 66, 70, 80, 78, 81, 120, 114, 70, 77, 88, 94, 104, 100, 95, 82, 83, 96, 93, 91, 102, 105, 103, 109, 111, 103, 112, 117, 120, 125, 135, 120, 130, 118, 110, 123])
+# For input - first dimension is years experience
+#           - second dimension is 0 for female, 1 for male
 
 from sklearn import linear_model
 
 
 # Initialise arrays
-xList = []
-yList = []
+inputArray = []
+outputArray = []
 
 # Data entries - feel free to play around and alter the data here
 # ===============================================================
-xList.append([1, 0])
-yList.append(65)
+inputArray.append([1, 0])
+outputArray.append(65)
 
-xList.append([5, 0])
-yList.append(80)
+inputArray.append([5, 0])
+outputArray.append(80)
 
-xList.append([10, 0])
-yList.append(95)
+inputArray.append([10, 0])
+outputArray.append(95)
 
-xList.append([2, 0])
-yList.append(67)
+inputArray.append([2, 0])
+outputArray.append(67)
 
-xList.append([3, 0])
-yList.append(76)
+inputArray.append([3, 0])
+outputArray.append(76)
 
-xList.append([4, 0])
-yList.append(80)
+inputArray.append([4, 0])
+outputArray.append(80)
 
-xList.append([5, 0])
-yList.append(84)
+inputArray.append([5, 0])
+outputArray.append(84)
 
-xList.append([6, 0])
-yList.append(87)
+inputArray.append([6, 0])
+outputArray.append(87)
 
-xList.append([7, 0])
-yList.append(90)
+inputArray.append([7, 0])
+outputArray.append(90)
 
-xList.append([8, 0])
-yList.append(93)
+inputArray.append([8, 0])
+outputArray.append(93)
 
-xList.append([9, 0])
-yList.append(94)
+inputArray.append([9, 0])
+outputArray.append(94)
 
-xList.append([10, 0])
-yList.append(101)
+inputArray.append([10, 0])
+outputArray.append(101)
 
-xList.append([1, 0])
-yList.append(60)
+inputArray.append([1, 0])
+outputArray.append(60)
 
-xList.append([1, 0])
-yList.append(70)
+inputArray.append([1, 0])
+outputArray.append(70)
 
-xList.append([10, 0])
-yList.append(110)
+inputArray.append([10, 0])
+outputArray.append(110)
 
-xList.append([9, 0])
-yList.append(98)
+inputArray.append([9, 0])
+outputArray.append(98)
 
-xList.append([7, 0])
-yList.append(88)
+inputArray.append([7, 0])
+outputArray.append(88)
 
-xList.append([8, 0])
-yList.append(86)
+inputArray.append([8, 0])
+outputArray.append(86)
 
-xList.append([6, 0])
-yList.append(100)
+inputArray.append([6, 0])
+outputArray.append(100)
 
-xList.append([5, 0])
-yList.append(75)
+inputArray.append([5, 0])
+outputArray.append(75)
 
-xList.append([4, 0])
-yList.append(74)
+inputArray.append([4, 0])
+outputArray.append(74)
 
-xList.append([3, 0])
-yList.append(72)
+inputArray.append([3, 0])
+outputArray.append(72)
 
-xList.append([2, 0])
-yList.append(66)
+inputArray.append([2, 0])
+outputArray.append(66)
 
-xList.append([2, 0])
-yList.append(70)
+inputArray.append([2, 0])
+outputArray.append(70)
 
-xList.append([6, 0])
-yList.append(80)
+inputArray.append([6, 0])
+outputArray.append(80)
 
-xList.append([6, 0])
-yList.append(78)
+inputArray.append([6, 0])
+outputArray.append(78)
 
-xList.append([7, 0])
-yList.append(81)
+inputArray.append([7, 0])
+outputArray.append(81)
 
-xList.append([10, 0])
-yList.append(120)
+inputArray.append([10, 0])
+outputArray.append(120)
 
-xList.append([9, 0])
-yList.append(114)
+inputArray.append([9, 0])
+outputArray.append(114)
 
-xList.append([1, 0])
-yList.append(70)
+inputArray.append([1, 0])
+outputArray.append(70)
 
-xList.append([2, 0])
-yList.append(77)
+inputArray.append([2, 0])
+outputArray.append(77)
 
-xList.append([3, 0])
-yList.append(88)
+inputArray.append([3, 0])
+outputArray.append(88)
 
-xList.append([4, 0])
-yList.append(94)
+inputArray.append([4, 0])
+outputArray.append(94)
 
-xList.append([5, 0])
-yList.append(104)
+inputArray.append([5, 0])
+outputArray.append(104)
 
-xList.append([5, 0])
-yList.append(100)
+inputArray.append([5, 0])
+outputArray.append(100)
 
-xList.append([5, 0])
-yList.append(95)
+inputArray.append([5, 0])
+outputArray.append(95)
 
-xList.append([2, 0])
-yList.append(82)
+inputArray.append([2, 0])
+outputArray.append(82)
 
-xList.append([3, 0])
-yList.append(83)
+inputArray.append([3, 0])
+outputArray.append(83)
 
-xList.append([4, 0])
-yList.append(96)
+inputArray.append([4, 0])
+outputArray.append(96)
 
-xList.append([4, 0])
-yList.append(93)
+inputArray.append([4, 0])
+outputArray.append(93)
 
-xList.append([3, 0])
-yList.append(91)
+inputArray.append([3, 0])
+outputArray.append(91)
 
-xList.append([6, 0])
-yList.append(102)
+inputArray.append([6, 0])
+outputArray.append(102)
 
-xList.append([6, 0])
-yList.append(105)
+inputArray.append([6, 0])
+outputArray.append(105)
 
-xList.append([6, 0])
-yList.append(103)
+inputArray.append([6, 0])
+outputArray.append(103)
 
-xList.append([7, 0])
-yList.append(109)
+inputArray.append([7, 0])
+outputArray.append(109)
 
-xList.append([7, 0])
-yList.append(111)
+inputArray.append([7, 0])
+outputArray.append(111)
 
-xList.append([7, 0])
-yList.append(103)
+inputArray.append([7, 0])
+outputArray.append(103)
 
-xList.append([8, 0])
-yList.append(112)
+inputArray.append([8, 0])
+outputArray.append(112)
 
-xList.append([8, 0])
-yList.append(117)
+inputArray.append([8, 0])
+outputArray.append(117)
 
-xList.append([8, 0])
-yList.append(120)
+inputArray.append([8, 0])
+outputArray.append(120)
 
-xList.append([9, 0])
-yList.append(125)
+inputArray.append([9, 0])
+outputArray.append(125)
 
-xList.append([10, 0])
-yList.append(135)
+inputArray.append([10, 0])
+outputArray.append(135)
 
-xList.append([10, 0])
-yList.append(120)
+inputArray.append([10, 0])
+outputArray.append(120)
 
-xList.append([9, 0])
-yList.append(130)
+inputArray.append([9, 0])
+outputArray.append(130)
 
-xList.append([9, 0])
-yList.append(118)
+inputArray.append([9, 0])
+outputArray.append(118)
 
-xList.append([9, 0])
-yList.append(110)
+inputArray.append([9, 0])
+outputArray.append(110)
 
-xList.append([10, 0])
-yList.append(123)
+inputArray.append([10, 0])
+outputArray.append(123)
 
 
 
 
 # Turn lists into NumPy arrays
-X = np.array(xList)
-Y = np.array(yList)
+inputData = np.array(inputArray)
+outputData = np.array(outputArray)
 
 # Turn data into a model and print predictions
 # ============================================
@@ -197,7 +195,7 @@ Y = np.array(yList)
 
 # Linear regression model
 reg = linear_model.LinearRegression()
-reg.fit (X , Y)
+reg.fit (inputData, outputData)
 reg.coef_
 print ("USING LINEAR REGRESSION")
 print ("-----------------------")
@@ -209,7 +207,7 @@ print
 
 # Baysean Ridge model
 reg = linear_model.BayesianRidge()
-reg.fit (X , Y)
+reg.fit (inputData, outputData)
 reg.coef_
 print ("USING BAYESIAN RIDGE")
 print ("-----------------------")
@@ -219,7 +217,7 @@ print
 
 # Lasso model
 reg = linear_model.Lasso(alpha = 0.1)
-reg.fit (X , Y)
+reg.fit (inputData, outputData)
 reg.coef_
 print ("USING LASSO MODEL")
 print ("-----------------------")
